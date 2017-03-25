@@ -14,20 +14,19 @@ pixelPainter.appendChild(swatchContainer);
     this.height = 25;
     this.width = 25;
    }
-
 }
 
 // var testSwatch = new Swatches(1,"#4682b4");
 // console.log(testSwatch);
 
 //if we change "2"
-for(var i=0; i<10; i++){
+for(var i=0; i<2; i++){
   var row = document.createElement("div");
   // row.className = "row"+i.toString();//"row0","row1"...
   swatchContainer.appendChild(row);
-  for(var j=0; j<10; j++){
+  for(var j=0; j<2; j++){
     var swatch = document.createElement("div");
-    swatch.id = i+"swatch"+j;
+    swatch.id = "row" + i + "swatch" + j;
     swatch.style.width = "25px";
     swatch.style.height = "25px";
     swatch.style.border = "1px solid black";
@@ -35,8 +34,17 @@ for(var i=0; i<10; i++){
 
     row.appendChild(swatch);
   }
-
-console.log(row);
-console.log(swatch);
 }
+var pixelRed = document.getElementById("row0swatch0");
+  pixelRed.style.background = "red";
+
+var pixelBlue = document.getElementById("row0swatch1");
+pixelBlue.style.background = "blue";
+
+var pixelYellow = document.getElementById("row1swatch0");
+pixelYellow.style.background = "yellow";
+
+var pixelGreen = document.getElementById('row1swatch1');
+pixelGreen.style.background = "green";
+
 
