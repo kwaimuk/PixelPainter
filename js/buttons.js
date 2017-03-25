@@ -21,8 +21,19 @@ var buttonContainer = document.createElement("div");
   clear.id = "clear";
   clear.innerHTML = "clear";
   clear.addEventListener("click",function(event){
-  console.log(event.target.id);
+
+    for(var i = 0; i < 10; i++){
+      //go to each row[i]
+      for(var j = 0; j < 10; j++){
+        //go to each pixel row[i]pixel[j]
+        document.getElementById("row"+[i]+"pixel"+[j]).style.background = "beige";
+        //assign style.background to beige
+      }
+    }
   });
   buttonContainer.appendChild(clear);
+
+
+
 
 
