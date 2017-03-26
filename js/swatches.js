@@ -15,6 +15,9 @@ pixelPainter.appendChild(swatchContainer);
     this.width = 25;
    }
 }
+
+
+
 // var testSwatch = new Swatches(1,"#4682b4");
 // console.log(testSwatch);
 var pointerColor = "blank";
@@ -30,7 +33,7 @@ for(var i=0; i<2; i++){
     swatch.style.height = "25px";
     swatch.style.border = "1px solid black";
     swatch.style.display = "table-cell";
-    swatch.addEventListener("click", function(event){
+    swatch.addEventListener("click", function (event){
       // console.log(event.target.style.background);
       console.log(pointerColor);
       pointerColor = event.target.style.background;
@@ -40,6 +43,8 @@ for(var i=0; i<2; i++){
     row.appendChild(swatch);
   }
 }
+
+
 
 var pixelRed = document.getElementById("row0swatch0");
   pixelRed.style.background = "red";
