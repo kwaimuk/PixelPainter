@@ -20,6 +20,7 @@ var buttonContainer = document.createElement("div");
 
 
   var clear = document.createElement("button");
+
     clear.id = "clear";
     clear.innerHTML = "clear";
     clear.addEventListener("click",function(event){
@@ -31,5 +32,8 @@ var buttonContainer = document.createElement("div");
       }
   });
   buttonContainer.appendChild(clear);
+
+
+
 
 
