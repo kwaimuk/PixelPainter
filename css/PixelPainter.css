@@ -3,25 +3,27 @@ body{
 }
 
 h1{
-  color:green;
+  color:black;
   font-family: arial;
+  text-align: center;
 }
 
 pixelPainter{
+  display: inline;
   background-color: blue;
+  padding: 100px;
 
 }
 
-swatchContainer{
-  background-color: orange;
+#canvas {
+  margin: 25px;
 }
 
-.row0{
-
-background-color: green;
+#buttonContainer {
+  margin: 25px;
 }
 
-.row1{
-
-background-color: purple;
+#swatchContainer {
+  float: right;
+  margin: 25px;
 }

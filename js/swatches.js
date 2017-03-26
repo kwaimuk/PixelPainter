@@ -35,7 +35,7 @@ for(var i=0; i<2; i++){
       console.log(pointerColor);
       pointerColor = event.target.style.background;
       console.log(pointerColor);
-      // return pointerColor;
+    // return pointerColor;
     });
     row.appendChild(swatch);
   }
