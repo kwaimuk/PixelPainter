@@ -13,7 +13,7 @@ var buttonContainer = document.createElement("div");
     erase.id = "erase";
     erase.innerHTML = "erase";
     erase.addEventListener("click",function(event){
-      pointerColor = "beige";
+      pointerColor = "white";
   });
 
   buttonContainer.appendChild(erase);
@@ -28,7 +28,7 @@ var buttonContainer = document.createElement("div");
       var x = document.querySelectorAll(".pixel");
       var i;
       for(i = 0; i< x.length; i++) {
-         x[i].style.background = "beige";
+         x[i].style.background = "white";
       }
   });
   buttonContainer.appendChild(clear);

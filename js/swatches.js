@@ -22,16 +22,16 @@ pixelPainter.appendChild(swatchContainer);
 // console.log(testSwatch);
 var pointerColor = "blank";
 
-for(var i=0; i<2; i++){
+for(var i=0; i<5; i++){
   var row = document.createElement("div");
   // row.className = "row"+i.toString();//"row0","row1"...
   swatchContainer.appendChild(row);
-  for(var j=0; j<2; j++){
+  for(var j=0; j<13; j++){
     var swatch = document.createElement("div");
     swatch.id = "row" + i + "swatch" + j;
     swatch.style.width = "25px";
     swatch.style.height = "25px";
-    swatch.style.border = "1px solid black";
+    swatch.style.border = "1px solid white";
     swatch.style.display = "table-cell";
     swatch.addEventListener("click", function (event){
       // console.log(event.target.style.background);
@@ -44,7 +44,7 @@ for(var i=0; i<2; i++){
   }
 }
 
-
+// Can I use querySelectorAll and loop through to assign colors from another array to fill in our pallette?
 
 var pixelRed = document.getElementById("row0swatch0");
   pixelRed.style.background = "red";
