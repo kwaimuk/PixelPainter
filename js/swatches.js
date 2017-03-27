@@ -16,47 +16,53 @@ pixelPainter.appendChild(swatchContainer);
    }
 }
 
-
-
-// var testSwatch = new Swatches(1,"#4682b4");
-// console.log(testSwatch);
 var pointerColor = "blank";
+var colorArr = ["rgb(153,0,0)", "rgb(204,0,0)", "rgb(255,0,0)", "rgb(255,51,51)", "rgb(255,102,102)","rgb(153,76,0)"];
 
-for(var i=0; i<5; i++){
+for(var i=0; i<10; i++){
   var row = document.createElement("div");
-  // row.className = "row"+i.toString();//"row0","row1"...
   swatchContainer.appendChild(row);
-  for(var j=0; j<13; j++){
+  for(var j=0; j<5; j++){
     var swatch = document.createElement("div");
     swatch.id = "row" + i + "swatch" + j;
+    swatch.className = "swatch";
     swatch.style.width = "25px";
     swatch.style.height = "25px";
     swatch.style.border = "1px solid white";
     swatch.style.display = "table-cell";
     swatch.addEventListener("click", function (event){
-      // console.log(event.target.style.background);
-      console.log(pointerColor);
       pointerColor = event.target.style.background;
-      console.log(pointerColor);
-    // return pointerColor;
     });
     row.appendChild(swatch);
-  }
+    }
 }
+
+
+// Assign color values:
+
+for (var k = 0; k<colorArr.length; k++) {
+  console.log(colorArr[k]);
+}
+
+var swatches = document.getElementsByClassName("swatch");
+console.log(swatches);
+for (var i = 0; i < swatches.length; i++) {
+  swatches[i].style.background = colorArr[k].toString();
+}
+
+
 
 // Can I use querySelectorAll and loop through to assign colors from another array to fill in our pallette?
 
-var pixelRed = document.getElementById("row0swatch0");
-  pixelRed.style.background = "red";
+// var pixelRed = document.getElementById("row0swatch0");
+//   pixelRed.style.background = "red";
 
-var pixelBlue = document.getElementById("row0swatch1");
-pixelBlue.style.background = "blue";
+// var pixelBlue = document.getElementById("row0swatch1");
+// pixelBlue.style.background = "blue";
 
-var pixelYellow = document.getElementById("row1swatch0");
-pixelYellow.style.background = "yellow";
+// var pixelYellow = document.getElementById("row1swatch0");
+// pixelYellow.style.background = "yellow";
 
-var pixelGreen = document.getElementById('row1swatch1');
-pixelGreen.style.background = "green";
 
 
 
