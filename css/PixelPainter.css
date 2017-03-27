@@ -1,5 +1,5 @@
 body{
-  background-color: beige;
+  background: radial-gradient(circle, #000066 25%, #3366ff 100%);
   min-width: 700px;
 }
 
@@ -9,22 +9,46 @@ h1{
   text-align: center;
 }
 
+
+
+
 pixelPainter{
-  display: inline;
+  display: inline-block;
   background-color: blue;
-  padding: 100px;
+  padding: 200px;
+}
+
+.swatch{
+  border-radius: 30%;
+}
+
+.pixel{
+
+}
+
+.roundedCorners{
+  border-radius: 50%;
+}
+
+#swatchContainer {
+  float:left;
+  margin: 10px;
 
 }
 
 #canvas {
-  margin: 25px;
+  float:left;
+  margin: 10px;
+
 }
 
 #buttonContainer {
-  margin: 25px;
+  position: absolute;
+  left: 25px;
+  top: 215px;
+
+ /* margin: 25px;*/
 }
 
-#swatchContainer {
-  float: right;
-  margin: 25px;
-}
+
+

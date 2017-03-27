@@ -17,7 +17,7 @@ document.onmouseup   = function() { isMouseDown = false;};
         pixel.className = "pixel";
         pixel.style.width = "5px";
         pixel.style.height = "5px";
-        pixel.style.border = "1px solid beige";
+        pixel.style.border = "";
         pixel.style.display = "table-cell";
         pixel.style.background = "white";
         pixel.addEventListener("mouseover", function(event){
@@ -38,3 +38,9 @@ function target(){
   return this.id;
   console.log(this.id);
 }
+
+      var x = document.querySelectorAll(".pixel");
+      var i;
+      for(i = 0; i< x.length; i++) {
+         x[i].style.cursor = "pointer";
+      }
