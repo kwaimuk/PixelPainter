@@ -2,7 +2,7 @@ var swatchContainer = document.createElement("div");
 console.log(swatchContainer);
 
 swatchContainer.id = "swatchContainer";
-
+//test
 pixelPainter.appendChild(swatchContainer);
 
  class Swatch{

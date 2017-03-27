@@ -2,7 +2,7 @@
 
 // Erase - Assigning pointerColor to beige
 // Clear - Assign all canvas ids to beige
-
+//test
 var buttonContainer = document.createElement("div");
   buttonContainer.id = "buttonContainer";
   //canvas.insertBefore(buttonContainer,cavas.childNodes[0]);

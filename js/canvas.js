@@ -1,7 +1,7 @@
 var canvas = document.createElement("div");
   canvas.id = "canvas";
   pixelPainter.appendChild(canvas);
-
+//test
 var isMouseDown = false;
 document.onmousedown = function() { isMouseDown = true;};
 document.onmouseup   = function() { isMouseDown = false;};
