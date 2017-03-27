@@ -1,10 +1,13 @@
-var canvas = document.createElement("div");
-  canvas.id = "canvas";
-  pixelPainter.appendChild(canvas);
 
-var isMouseDown = false;
-document.onmousedown = function() { isMouseDown = true;};
-document.onmouseup   = function() { isMouseDown = false;};
+var pixelContainer = (function(){
+
+  var canvas = document.createElement("div");
+    canvas.id = "canvas";
+    pixelPainter.appendChild(canvas);
+
+})();
+
+var pixels = (function(){
 
   for(var i=0; i<100; i++){
     var row = document.createElement("div");
@@ -17,7 +20,7 @@ document.onmouseup   = function() { isMouseDown = false;};
         pixel.className = "pixel";
         pixel.style.width = "5px";
         pixel.style.height = "5px";
-        pixel.style.border = "1px solid beige";
+        pixel.style.border = "";
         pixel.style.display = "table-cell";
         pixel.style.background = "white";
         pixel.addEventListener("mouseover", function(event){
@@ -32,9 +35,20 @@ document.onmouseup   = function() { isMouseDown = false;};
         });
         row.appendChild(pixel);
       }
-}
+  }
+})();
 
 function target(){
   return this.id;
   console.log(this.id);
 }
+
+  var isMouseDown = false;
+  document.onmousedown = function() { isMouseDown = true;};
+  document.onmouseup = function() { isMouseDown = false;};
+
+      var x = document.querySelectorAll(".pixel");
+      var i;
+      for(i = 0; i< x.length; i++) {
+         x[i].style.cursor = "pointer";
+      }
