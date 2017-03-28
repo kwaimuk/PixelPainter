@@ -2,9 +2,9 @@
 var pointerColor = "blank";
 
 var swatchContainer = (function(){
-  document.createElement("div");
-  swatchContainer.id = "swatchContainer";
-  pixelPainter.appendChild(swatchContainer);
+  var container = document.createElement("div");
+  container.id = "container";
+  pixelPainter.appendChild(container);
 
 })();
 
@@ -12,7 +12,7 @@ var swatches = (function() {
 
   for(var i=0; i<10; i++){
     var row = document.createElement("div");
-    swatchContainer.appendChild(row);
+   container.appendChild(row);
       for(var j=0; j<5; j++){
         var swatch = document.createElement("div");
         swatch.id = "row" + i + "swatch" + j;
@@ -34,7 +34,7 @@ var swatches = (function() {
   var colorArr = ["rgb(153,0,0)", "rgb(204,0,0)", "rgb(255,0,0)", "rgb(255,51,51)", "rgb(255,102,102)","rgb(153,76,0)"];
 
   for(i = 0; i< x.length; i++) {
-     x[i].style.background = colors[i];
+     x[i].style.background = colorArr[i];
   }
 })();
 
