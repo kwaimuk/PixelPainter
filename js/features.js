@@ -31,7 +31,6 @@ var features = (function(){
     container.appendChild(erase);
   }
 
-
   function clearButton(){
     var clear = document.createElement("button");
     clear.id = "clear";

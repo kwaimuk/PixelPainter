@@ -4,6 +4,7 @@ var canvas = (function(){
 
     var canvas = document.createElement("div");
       canvas.id = "canvas";
+      var pixelPainter = document.getElementById("pixelPainter");
       pixelPainter.appendChild(canvas);
 
   }
@@ -48,9 +49,7 @@ var canvas = (function(){
 
   return {
     pixelContainer: pixelContainer,
-    pixels: { target: target,
-              createCanvas: createCanvas
-            }
+    pixels: pixels
     };
 
 })();

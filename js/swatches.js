@@ -24,7 +24,7 @@ var swatchModule = (function(){
           swatch.style.border = "1px solid white";
           swatch.style.display = "table-cell";
           swatch.addEventListener("click", function (event){
-          pointerColor = event.target.style.background;
+          pointerColor = event.pixels.target.style.background;
           });
         row.appendChild(swatch);
         }
