@@ -1,5 +1,6 @@
 
 var features = (function(){
+    var isNormal =true;
 
   function buttonContainer(){
     var container = document.createElement("div");
@@ -8,18 +9,6 @@ var features = (function(){
     pixelPainter.appendChild(container);
   }
 
-  // function clickDrag(){
-  //   console.log("ok");
-  //   var isMouseDown = false;
-  //   document.onmousedown = function() { isMouseDown = true;};
-  //   document.onmouseup = function() { isMouseDown = false;};
-
-  //   var x = document.querySelectorAll(".pixel");
-  //   var i;
-  //   for(i = 0; i< x.length; i++) {
-  //      x[i].style.cursor = "pointer";
-  //   }
-  // }
 
   function eraseButton(){
     var erase = document.createElement("button");
@@ -40,8 +29,13 @@ var features = (function(){
       console.log(event.target.id);
       var x = document.querySelectorAll(".pixel");
       var i;
+      console.log("clear",isNormal);
       for(i = 0; i< x.length; i++) {
+        if (isNormal === true){
          x[i].style.background = "white";
+        } else {
+         x[i].style.background = "dimgray";
+        }
       }
     });
 
@@ -56,11 +50,12 @@ var features = (function(){
     litebrite.innerHTML = "Lite•Brite";
 
     function mode(){
+      isNormal = false;
       var x = document.querySelectorAll(".pixel");
       var i;
       for(i = 0; i< x.length; i++) {
         x[i].style.backgroundColor = "dimgray";
-         x[i].className = "roundedCorners";
+         x[i].style.borderRadius = "50%";
       }
 
       // x.style.border-radius = 50%;
@@ -69,25 +64,43 @@ var features = (function(){
       t.innerHTML = "Lite•Brite";
 
       document.body.style.background = "black";
+       console.log("isNormal",isNormal);
+       return isNormal;
     }
 
-    litebrite.addEventListener("click",mode,true);
-    litebrite.removeEventListener("dblclick",mode,true);
-
+    litebrite.addEventListener("click",mode);
 
     container.appendChild(litebrite);
 
-    var normalmode = document.createElement("button");
-      normalmode.id = "Normal";
-      normalmode.innerHTML = "Normal";
-      normalmode.removeEventListener("click",mode,false);
-    container.appendChild(normalmode);
+    function normalMode(){
+      isNormal = true;
+      var x = document.querySelectorAll(".pixel");
+      var i;
+      for(i = 0; i< x.length; i++) {
+        x[i].style.backgroundColor = "white";
+         x[i].style.borderRadius = "0%";
+      }
+
+      // x.style.border-radius = 50%;
+      var g = document.getElementById("title");
+      g.style.textShadow = "";
+      g.innerHTML = "Pixel Painter";
+
+      document.body.style.background = "lightgray";
+      return isNormal;
+    }
+
+    var normal = document.createElement("button");
+      normal.id = "Normal";
+      normal.innerHTML = "Normal";
+      normal.addEventListener("click",normalMode);
+    container.appendChild(normal);
+    console.log("IN",isNormal);
   }
 
 
   return {
     buttonContainer: buttonContainer,
-    // clickDrag: clickDrag,
     eraseButton: eraseButton,
     clearButton: clearButton,
     liteBriteMode: liteBriteMode
