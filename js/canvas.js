@@ -1,26 +1,48 @@
 var canvas = (function(){
 
   function pixelContainer(){
-
-    var canvas = document.createElement("div");
-      canvas.id = "canvas";
+console.log("hello");
+    // var canvas = document.createElement("div");
+      // canvas.id = "canvas";
       var pixelPainter = document.getElementById("pixelPainter");
-      pixelPainter.appendChild(canvas);
+      // pixelPainter.appendChild(canvas);
 
   }
 
-  function pixels(){
+  function clickDrag(){
+    console.log("ok");
+    var isMouseDown = false;
+    document.onmousedown = function() { isMouseDown = true;};
+    document.onmouseup = function() { isMouseDown = false;};
 
+    var x = document.querySelectorAll(".pixel");
+    var i;
+    for(i = 0; i< x.length; i++) {
+       x[i].style.cursor = "pointer";
+    }
+  }
+
+  function pixels(){
+console.log("hello2");
     function target(){
       return this.id;
     }
+  }
 
-    function createCanvas(){
+  function createCanvas(){
+        var isMouseDown = false;
+    document.onmousedown = function() { isMouseDown = true;};
+    document.onmouseup = function() { isMouseDown = false;};
 
-      for(var i=0; i<100; i++){
+    var x = document.querySelectorAll(".pixel");
+    var i;
+      for(u = 0; u< x.length; u++){
+        x[u].style.cursor = "pointer";
+          };
+      for(i=0; i<100; i++){
         var row = document.createElement("div");
         // row.className = "row"+i.toString();//"row0","row1"...
-        canvas.appendChild(row);
+        pixelPainter.appendChild(row);
 
         for(var j=0; j<100; j++){
           var pixel = document.createElement("div");
@@ -42,14 +64,16 @@ var canvas = (function(){
             event.target.style.background = pointerColor;
           });
           row.appendChild(pixel);
+          console.log("hey");
         }
       }
     }
-  }
+
 
   return {
     pixelContainer: pixelContainer,
-    pixels: pixels
+    pixels: pixels,
+    createCanvas: createCanvas
     };
 
 })();

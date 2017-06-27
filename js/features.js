@@ -8,17 +8,18 @@ var features = (function(){
     pixelPainter.appendChild(container);
   }
 
-  function clickDrag(){
-    var isMouseDown = false;
-    document.onmousedown = function() { isMouseDown = true;};
-    document.onmouseup = function() { isMouseDown = false;};
+  // function clickDrag(){
+  //   console.log("ok");
+  //   var isMouseDown = false;
+  //   document.onmousedown = function() { isMouseDown = true;};
+  //   document.onmouseup = function() { isMouseDown = false;};
 
-    var x = document.querySelectorAll(".pixel");
-    var i;
-    for(i = 0; i< x.length; i++) {
-       x[i].style.cursor = "pointer";
-    }
-  }
+  //   var x = document.querySelectorAll(".pixel");
+  //   var i;
+  //   for(i = 0; i< x.length; i++) {
+  //      x[i].style.cursor = "pointer";
+  //   }
+  // }
 
   function eraseButton(){
     var erase = document.createElement("button");
@@ -74,19 +75,19 @@ var features = (function(){
     litebrite.removeEventListener("dblclick",mode,true);
 
 
-    buttonContainer.appendChild(litebrite);
+    container.appendChild(litebrite);
 
     var normalmode = document.createElement("button");
-      normalmode.id = "normal";
-      normalmode.innerHTML = "normal";
+      normalmode.id = "Normal";
+      normalmode.innerHTML = "Normal";
       normalmode.removeEventListener("click",mode,false);
-    buttonContainer.appendChild(normalmode);
+    container.appendChild(normalmode);
   }
 
 
   return {
     buttonContainer: buttonContainer,
-    clickDrag: clickDrag,
+    // clickDrag: clickDrag,
     eraseButton: eraseButton,
     clearButton: clearButton,
     liteBriteMode: liteBriteMode

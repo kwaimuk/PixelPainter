@@ -4,7 +4,7 @@
 }*/
 
 body{
-  background: white;
+  background: lightgray;
   min-width: 700px;
 }
 
@@ -41,13 +41,11 @@ pixelPainter{
 }
 
 #canvas {
-  float:left;
-  margin: 10px;
+
 
 }
 
 #buttonContainer {
-  position: absolute;
   left: 25px;
   top: 215px;
 
